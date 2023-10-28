@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Formulario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-text-center">
+    <ion-card>
+      <ion-list>
+        <ion-list>
+          <ion-item>
+            <ion-input label="Documento:" type="number" [(ngModel)]="datos.documento"
+              label-placement="floating"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input label="Nombre:" type="text" [(ngModel)]="datos.nombre" label-placement="floating"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input label="Telefono:" type="number" [(ngModel)]="datos.telefono"
+              label-placement="floating"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input label="Nombre de Comercio:" type="text" [(ngModel)]="datos.comercio"
+              label-placement="floating"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input label="Email:" type="email" [(ngModel)]="datos.correo" required
+              label-placement="floating"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-select label="Tipo:" placeholder="Seleccione" [(ngModel)]="datos.tipo_id" label-placement="floating">
+              <ion-select-option value="1">1. Restaurantes</ion-select-option>
+              <ion-select-option value="2">2. Droguerias</ion-select-option>
+              <ion-select-option value="3">3. Turismo</ion-select-option>
+              <ion-select-option value="4">4. Hoteles</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Radio Label:</ion-label>
+            <ion-radio-group [(ngModel)]="datos.plan_id" [allowEmptySelection]="true" value="turtles">
+              <ion-radio value="3meses">3 meses | $10.000</ion-radio><br />
+              <ion-radio value="6meses">6 meses | $30.000</ion-radio><br />
+              <ion-radio value="12meses">12 meses | $100.000</ion-radio><br />
+            </ion-radio-group>
+          </ion-item>
+        </ion-list>
+      </ion-list>
+      <br>
+      <ion-button shape="round" (click)="guardarFormulario()">Guardar</ion-button> <ion-button href="tabs"
+        color="danger" shape="round">Cancelar</ion-button>
+    </ion-card>
+  </div>
+</ion-content>
